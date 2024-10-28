@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Cadastro de Jogo</title>
+</h:head>
+
+<h:body>
+
+	<h:form id="formulario">
+		<p:messages id="mensagem" showDetail="true" closable="true"/>
+		
+		<p:panelGrid columns="2">
+			<h:outputLabel value="Nome do Jogador" for="nomeJogador" />
+			<p:inputText id="nomeJogador" value="#{jogoBean.jogo.nomeJogador}" required="true" label="Nome do Jogador"/>	
+			
+			<h:outputLabel value="Número Aposta" for="numeroAposta" />
+			<p:inputText id="numeroAposta" value="#{jogoBean.jogo.numeroAposta}" required="true" label="Número Aposta" />
+		</p:panelGrid>
+		
+		<p:commandButton value="Salvar Jogo" action="#{jogoBean.salvar}" update="mensagem" />
+		<h:outputLink value="Listagem.xhtml" style="margin-left:30px">Ir para Listagem</h:outputLink>
+
+	</h:form>
+</h:body>
+</html>
